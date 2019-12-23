@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Historic Weather Information</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <link rel="stylesheet" type="text/css" href="css/uikit.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/components/datepicker.min.css" />
+    
+    <script type="text/javascript" src="webjars/jquery/3.4.1/jquery.min.js"></script>
+    
+    <script type="text/javascript" src="js/uikit.min.js"></script>
+    <script type="text/javascript" src="js/components/datepicker.min.js"></script>
+
+
+    <script type="text/javascript" src="js/table.js"></script>
+    
+    <style>
+    </style>
+</head>
+
+<body>
+
+       <h1>Historic Weather Information</h1>
+
+       <form class="uk-form" id="weather-form">
+       		<fieldset data-uk-margin>
+               <label class="uk-form-label">From
+               	<input type="" data-uk-datepicker="{format:'YYYY-MM-DD'}" id="date-start" >
+               </label>
+               
+               <label class="uk-form-label">To
+               	<input type="" data-uk-datepicker="{format:'YYYY-MM-DD'}" id="date-end" >
+			   </label>
+
+               <button type="submit" id="btn-submit" class="uk-button uk-button-primary">Filter</button>
+           	</fieldset>
+       </form>
+
+       	<table id="weather-table" class="uk-table uk-table-hover uk-table-striped uk-table-condensed uk-overflow-container" style="width: 700px">
+		     <tr>
+		         <td class="uk-text-bold">Station</td>
+		         <td class="uk-text-center uk-text-bold">Date</td>
+		         <td class="uk-text-right uk-text-bold" style="width: 200px">Mean Temperature</td>
+		     </tr>
+			
+			<!--
+			Normally, we should at least firstly populate the table by using the built-in "th:each" 
+			functionality, but this wouldn't give me then the possibility to use JavaScript (which was a pre-requisite)
+			<tr th:each="record : ${weatherRecords}">
+		        <td th:text="${record.id}"></td>
+		        <td>th:text="${record.title}"></td>
+		        <td th:text="${record.text}"></td>
+    		</tr> 
+			 -->		     
+		</table>
+
+		<!-- Modal dialog box for displaying the details -->
+		<div class="uk-modal" id="modalDetails">
+		    <div class="uk-modal-dialog">
+		        <form class="uk-form">
+				    <fieldset>
+				        <legend><h1>Weather Detailed Information</h1></legend>
+				        <div > 
+					        <div style="display:flex; flex-direction: row">
+					        	<span class="uk-label uk-text-bold">Station Name:&nbsp;</span> 
+					        	<div id="blockquote-station-name" class="uk-text-primary"></div>
+							</div>
+					        <div style="display:flex; flex-direction: row">
+					        	<span class="uk-label uk-text-bold">Province:&nbsp;</span> 
+					        	<div id="blockquote-province" class="uk-text-primary"></div>
+							</div>
+					        <div style="display:flex; flex-direction: row">
+					        	<span class="uk-label uk-text-bold">Date:&nbsp;</span> 
+					        	<div id="blockquote-date" class="uk-text-primary"></div>
+							</div>
+					        <div style="display:flex; flex-direction: row">
+					        	<span class="uk-label uk-text-bold">Mean Temperature:&nbsp;</span>
+					        	<div id="blockquote-meanTemp" class="uk-text-warning"></div>
+							</div>
+					        <div style="display:flex; flex-direction: row">
+					        	<span class="uk-label uk-text-bold">Lowest Monthly Min Temperature::&nbsp;</span> 
+					        	<div id="blockquote-lowestMonthly_Min_Temp" class="uk-text-danger"></div>
+							</div>
+					        <div style="display:flex; flex-direction: row">
+					        	<span class="uk-label uk-text-bold">Highest Monthly Max Temperature:&nbsp;</span>  
+					        	<div id="blockquote-highest_Monthly_Max_Temp" class="uk-text-danger"></div>
+							</div>							    
+						</div>
+					</fieldset>
+				</form>
+		        <div class="uk-modal-footer">
+		        	<button class="uk-modal-close uk-button uk-button-primary" type="button">Close</button>
+		        </div>
+		    </div>
+		</div>
+
+</body>
+
+</html>

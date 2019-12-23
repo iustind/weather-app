@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Details</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <link rel="stylesheet" type="text/css" href="css/uikit.min.css" />
+    
+    <script type="text/javascript" src="webjars/jquery/3.4.1/jquery.min.js"></script>    
+    <script type="text/javascript" src="js/details.js"></script>
+
+</head>
+
+<body>
+
+     <div class="uk-form">
+     	<fieldset>
+		<legend><h1>Weather Detailed Information</h1></legend>
+
+	         <div id="div-details">
+	             <table>
+	                 <tr>
+	                     <td><label class="uk-label uk-text-bold">Station&nbsp;</label></td>
+	                     <td><input id="station" class="uk-text-primary"></input>
+	                     </td><br/>
+	                 </tr>
+	                 <tr>
+	                     <td><label class="uk-label uk-text-bold">Province</label></td>
+	                     <td><input id="province" class="uk-text-primary"></input>
+	                     </td><br/>
+	                 </tr>
+	                 <tr>
+	                     <td><label class="uk-label uk-text-bold">Date&nbsp;</label></td>
+	                     <td><input id="date" class="uk-text-primary"></input>
+	                     </td><br/>
+	                 </tr>
+	                 <tr>
+	                     <td><label class="uk-label uk-text-bold">Mean Temperature&nbsp;</label></td>
+	                     <td><input id="meanTemp" class="uk-text-primary"></input>
+	                     </td><br/>
+	                 </tr>
+	                 <tr>
+	                     <td><label class="uk-label uk-text-bold">Lowest Monthly Min Temperature&nbsp;</label></td>
+	                     <td><input id="lowestMonthly_Min_Temp" class="uk-text-danger"></input>
+	                     </td><br/>
+	                 </tr>
+	                 <tr>
+	                     <td><label class="uk-label uk-text-bold">Highest Monthly Max Temperature&nbsp;</label></td>
+	                     <td><input id="highest_Monthly_Max_Temp" class="uk-text-danger"></input>
+	                     </td><br/>
+	                 </tr>
+	             </table>
+	         </div>
+	 	</fieldset>
+     </div>
+
+
+</body>
+
+</html>
